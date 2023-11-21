@@ -51,3 +51,13 @@ const KittenThree = `<li class="card">
 
 KittenList.innerHTML = KittenOne + KittenTwo + KittenThree;
 
+const addButton = document.querySelector('.js_addButton');
+
+const formSection = document.querySelector('.js_formSection');
+
+addButton.addEventListener('click',(event)=> {
+    formSection.classList.toggle('collapsed');
+})
+
+
+
