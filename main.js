@@ -107,7 +107,36 @@ buttoncancel.addEventListener('click', (event) => {
 
 })
 
+//INCLUDES PUNTO 5 NO SABEMOS ENLAZAR LA DESCRIPCIÓN DE CADA GATITO. 
 
+
+const input_search_desc = document.querySelector('.js_in_search_desc');
+const descrSearchText = input_search_desc.value; 
+const kittenDesc1 = "Porte elegante, su patrón de color tan característico y sus ojos de un azul intenso, pero su historia se remonta a Asía al menos hace 500 años, donde tuvo su origen muy posiblemente.";
+const kittenDesc2 = "Gatito juguetón y elegante.";
+const kittenDesc3 = "Gatito negro y elegante.";
+
+input_search_desc.addEventListener('input', (event) => {
+  event.preventDefault() 
+  const descrSearchText = input_search_desc.value;
+
+
+})
+
+
+
+
+if( kittenDesc1.includes(descrSearchText) ) {
+  //Completa el código
+  }
+  
+  if( kittenDesc2.includes(descrSearchText) ) {
+  //Completa el código
+  }
+  
+  if( kittenDesc3.includes(descrSearchText) ) {
+  //Completa el código
+  }
 
 
 
