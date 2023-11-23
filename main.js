@@ -91,7 +91,25 @@ const newKittenHTML = `<li class="card">
 
 KittenList.innerHTML = KittenOne + KittenTwo + KittenThree + newKittenHTML;
 
+  inputDesc.value = '';
+  inputPhoto.value = '';
+  inputName.value = '';
+  inputBreed.value = '';
+
 })
+
+const buttoncancel = document.querySelector('.js-btn-cancel');
+
+buttoncancel.addEventListener('click', (event) => {
+  event.preventDefault() 
+
+  formSection.classList.add('collapsed');
+
+})
+
+
+
+
 
 
 
