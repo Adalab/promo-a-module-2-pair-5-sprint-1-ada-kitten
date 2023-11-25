@@ -64,6 +64,7 @@ const inputDesc = document.querySelector('.js-input-desc');
 const inputPhoto = document.querySelector('.js-input-photo');
 const inputName = document.querySelector('.js-input-name');
 const inputBreed = document.querySelector('.js-input-breed');
+const labelMessageError = document.querySelector('.js-label-error');
 
 buttonAdd.addEventListener('click', (event) => {
   event.preventDefault()
@@ -73,6 +74,7 @@ buttonAdd.addEventListener('click', (event) => {
   const valueName = inputName.value;
   const valueBreed = inputBreed.value;
 
+  if ()
 
   const newKittenHTML = `<li class="card">
   <article>
