@@ -74,7 +74,19 @@ buttonAdd.addEventListener('click', (event) => {
   const valueName = inputName.value;
   const valueBreed = inputBreed.value;
 
-  if ()
+
+  // Verificar si los campos obligatorios tienen contenido
+if (valueName.trim() === '' || valuePhoto.trim() === '' || valueDesc.trim() === '') {
+  // Mostrar mensaje de error si algún campo está vacío
+  labelMessageError.innerHTML = 'Por favor, completa todos los campos obligatorios.';
+} else {
+  // Limpiar mensaje de error si no hay problemas
+  labelMessageError.innerHTML = '';}
+
+//MANERAS DE HACER EL EJERCICIO POR IVAN: 
+  /* if( !valueDesc || !valuePhoto || !valueName ) {  // Ponemos mensaje de error}else {  // Ponemos gatito}
+addEventListener(....if( !valueDesc || !valuePhoto || !valueName ) {  // Ponemos mensaje de error  return;}// Ponemos gatito}); */
+
 
   const newKittenHTML = `<li class="card">
   <article>
@@ -136,7 +148,8 @@ else if( kittenDesc3.includes(descrSearchText) ) {
 
 KittenList.innerHTML = resultElement;
   
-})
+});
+
 
 
 
