@@ -66,6 +66,30 @@ const inputName = document.querySelector('.js-input-name');
 const inputBreed = document.querySelector('.js-input-breed');
 const labelMessageError = document.querySelector('.js-label-error');
 
+
+
+// //  MAI
+// if (valueName && valuePhoto && valueDesc) {
+//   // Ponemos gatito
+//   const newKittenHTML = `<li class="card">
+//   <article>
+//     <img
+//     class="card_img"
+//     src="` + valuePhoto + `"
+//     alt="gatito"
+//     />
+//     <h3 class="card_title">` + valueName + `</h3>
+//     <h4 class="card_race">` + valueBreed + `</h4>
+//     <p class="card_description">
+//    ` + valueDesc + `
+//     </p>
+//   </article>
+//   </li>`;
+// else {
+//   // Ponemos mensaje de error
+//   labelMessageError.innerHTML = 'Por favor, completa todos los campos obligatorios.'; 
+// }
+
 buttonAdd.addEventListener('click', (event) => {
   event.preventDefault()
 
@@ -74,21 +98,12 @@ buttonAdd.addEventListener('click', (event) => {
   const valueName = inputName.value;
   const valueBreed = inputBreed.value;
 
-
   // Verificar si los campos obligatorios tienen contenido
-if (valueName.trim() === '' || valuePhoto.trim() === '' || valueDesc.trim() === '') {
+if (valueName === '' || valuePhoto === '' || valueDesc === '') {
   // Mostrar mensaje de error si algún campo está vacío
   labelMessageError.innerHTML = 'Por favor, completa todos los campos obligatorios.';
 } else {
-  // Limpiar mensaje de error si no hay problemas
-  labelMessageError.innerHTML = '';}
-
-//MANERAS DE HACER EL EJERCICIO POR IVAN: 
-  /* if( !valueDesc || !valuePhoto || !valueName ) {  // Ponemos mensaje de error}else {  // Ponemos gatito}
-addEventListener(....if( !valueDesc || !valuePhoto || !valueName ) {  // Ponemos mensaje de error  return;}// Ponemos gatito}); */
-
-
-  const newKittenHTML = `<li class="card">
+const newKittenHTML = `<li class="card">
   <article>
     <img
     class="card_img"
@@ -105,14 +120,12 @@ addEventListener(....if( !valueDesc || !valuePhoto || !valueName ) {  // Pone
 
   KittenList.innerHTML = KittenOne + KittenTwo + KittenThree + newKittenHTML;
 
-
-
   inputDesc.value = '';
   inputPhoto.value = '';
   inputName.value = '';
   inputBreed.value = '';
 
-})
+}})
 
 const buttoncancel = document.querySelector('.js-btn-cancel');
 
@@ -149,9 +162,5 @@ else if( kittenDesc3.includes(descrSearchText) ) {
 KittenList.innerHTML = resultElement;
   
 });
-
-
-
-
 
 
