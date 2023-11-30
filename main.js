@@ -2,51 +2,58 @@
 
 const KittenList = document.querySelector('.js-list');
 
+const kittenImage1 = 'https://dev.adalab.es/gato-siames.webp';
+const kittenName1 = 'Anastacio';
+const kittenDescription1 =
+  ' Porte elegante, su patrón de color tan característico y sus ojos de un azul intenso, pero su historia se remonta a Asía al menos hace 500 años, donde tuvo su origen muy posiblemente.';
+const kittenRace1 = 'Siamés';
+
+const kittenImage2 = 'https://dev.adalab.es/sphynx-gato.webp';
+const kittenName2 = 'Fiona';
+const kittenDescription2 =
+  ' Produce fascinación y curiosidad. Exótico, raro, bello, extraño… hasta con pinta de alienígena han llegado a definir a esta raza gatuna que se caracteriza por la «ausencia» de pelo.';
+const kittenRace2 = 'Sphynx';
+
+const kittenImage3 = 'https://dev.adalab.es/maine-coon-cat.webp';
+const kittenName3 = 'Cielo';
+const kittenDescription3 =
+  ' Tienen la cabeza cuadrada y los ojos simétricos, por lo que su bella mirada se ha convertido en una de sus señas de identidad. Sus ojos son grandes y las orejas resultan largas y en punta.';
+const kittenRace3 = 'Maine Coon';
+
+
 const KittenOne = `<li class="card">
 <article>
   <img
     class="card_img"
-    src="https://dev.adalab.es/gato-siames.webp"
+    src="${kittenImage1}"
     alt="siames-cat"
   />
-  <h3 class="card_title">Anastacio</h3>
-  <h4 class="card_race">Siamés</h4>
-  <p class="card_description">
-    Porte elegante, su patrón de color tan característico y sus ojos
-    de un azul intenso, pero su historia se remonta a Asía al menos
-    hace 500 años, donde tuvo su origen muy posiblemente.
-  </p>
+  <h3 class="card_title">${kittenName1}</h3>
+  <h4 class="card_race">${kittenRace1}</h4>
+  <p class="card_description">${kittenDescription1}</p>
 </article>
 </li>`;
 
 const KittenTwo = `<li class="card">
 <img
   class="card_img"
-  src="https://dev.adalab.es/sphynx-gato.webp"
+  src="${kittenImage2}"
   alt="sphynx-cat"
 />
-<h3 class="card_title">Fiona</h3>
-<h4 class="card_race">Sphynx</h4>
-<p class="card_description">
-  Produce fascinación y curiosidad. Exótico, raro, bello, extraño…
-  hasta con pinta de alienígena han llegado a definir a esta raza
-  gatuna que se caracteriza por la «ausencia» de pelo.
-</p>
+<h3 class="card_title">${kittenName2}</h3>
+<h4 class="card_race">${kittenRace2}</h4>
+<p class="card_description">${kittenDescription2}</p>
 </li>`;
 
 const KittenThree = `<li class="card">
   <img
     class="card_img"
-    src="https://dev.adalab.es/maine-coon-cat.webp"
+    src="${kittenImage3}"
     alt="maine-coon-cat"
   />
-  <h3 class="card_title">Cielo</h3>
-  <h4 class="card_race">Maine Coon</h4>
-  <p class="card_description">
-    Tienen la cabeza cuadrada y los ojos simétricos, por lo que su
-    bella mirada se ha convertido en una de sus señas de identidad.
-    Sus ojos son grandes y las orejas resultan largas y en punta.
-  </p>
+  <h3 class="card_title">${kittenName3}</h3>
+  <h4 class="card_race">${kittenRace3}</h4>
+  <p class="card_description">${kittenDescription3}</p>
 </li>`;
 
 KittenList.innerHTML = KittenOne + KittenTwo + KittenThree;
@@ -66,29 +73,6 @@ const inputName = document.querySelector('.js-input-name');
 const inputBreed = document.querySelector('.js-input-breed');
 const labelMessageError = document.querySelector('.js-label-error');
 
-
-
-// //  MAI
-// if (valueName && valuePhoto && valueDesc) {
-//   // Ponemos gatito
-//   const newKittenHTML = `<li class="card">
-//   <article>
-//     <img
-//     class="card_img"
-//     src="` + valuePhoto + `"
-//     alt="gatito"
-//     />
-//     <h3 class="card_title">` + valueName + `</h3>
-//     <h4 class="card_race">` + valueBreed + `</h4>
-//     <p class="card_description">
-//    ` + valueDesc + `
-//     </p>
-//   </article>
-//   </li>`;
-// else {
-//   // Ponemos mensaje de error
-//   labelMessageError.innerHTML = 'Por favor, completa todos los campos obligatorios.'; 
-// }
 
 buttonAdd.addEventListener('click', (event) => {
   event.preventDefault()
