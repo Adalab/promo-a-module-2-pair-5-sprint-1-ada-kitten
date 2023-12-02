@@ -1,25 +1,40 @@
 'use strict';
 
 const KittenList = document.querySelector('.js-list');
-
+const addButton = document.querySelector('.js_addButton');
+const formSection = document.querySelector('.js_formSection');
 const kittenImage1 = 'https://dev.adalab.es/gato-siames.webp';
 const kittenName1 = 'Anastacio';
+const kittenName1UpperCase = kittenName1.toUpperCase();
 const kittenDescription1 =
   ' Porte elegante, su patrón de color tan característico y sus ojos de un azul intenso, pero su historia se remonta a Asía al menos hace 500 años, donde tuvo su origen muy posiblemente.';
 const kittenRace1 = 'Siamés';
 
 const kittenImage2 = 'https://dev.adalab.es/sphynx-gato.webp';
 const kittenName2 = 'Fiona';
+const kittenName2UpperCase = kittenName2.toUpperCase();
 const kittenDescription2 =
   ' Produce fascinación y curiosidad. Exótico, raro, bello, extraño… hasta con pinta de alienígena han llegado a definir a esta raza gatuna que se caracteriza por la «ausencia» de pelo.';
 const kittenRace2 = 'Sphynx';
 
 const kittenImage3 = 'https://dev.adalab.es/maine-coon-cat.webp';
 const kittenName3 = 'Cielo';
+const kittenName3UpperCase = kittenName3.toUpperCase();
 const kittenDescription3 =
   ' Tienen la cabeza cuadrada y los ojos simétricos, por lo que su bella mirada se ha convertido en una de sus señas de identidad. Sus ojos son grandes y las orejas resultan largas y en punta.';
-const kittenRace3 = 'Maine Coon';
+const kittenRace3 = '';
 
+let htmlRace = '';
+
+
+// Mostrar gatitos y mensaje si no hay raza
+
+if (kittenRace1 === "") {
+  htmlRace = '<h4 class="card_race">Uy que despiste, no sabemos su raza</h4>';
+
+} else {
+  htmlRace = kittenRace1;
+}
 
 const KittenOne = `<li class="card">
 <article>
@@ -28,11 +43,18 @@ const KittenOne = `<li class="card">
     src="${kittenImage1}"
     alt="siames-cat"
   />
-  <h3 class="card_title">${kittenName1}</h3>
-  <h4 class="card_race">${kittenRace1}</h4>
+  <h3 class="card_title">${kittenName1.toUpperCase()}</h3>
+  <h4 class="card_race">${htmlRace}</h4>
   <p class="card_description">${kittenDescription1}</p>
 </article>
 </li>`;
+
+if (kittenRace2 === "") {
+  htmlRace = '<h4 class="card_race">Uy que despiste, no sabemos su raza</h4>';
+
+} else {
+  htmlRace = kittenRace2 ;
+}
 
 const KittenTwo = `<li class="card">
 <img
@@ -40,10 +62,17 @@ const KittenTwo = `<li class="card">
   src="${kittenImage2}"
   alt="sphynx-cat"
 />
-<h3 class="card_title">${kittenName2}</h3>
-<h4 class="card_race">${kittenRace2}</h4>
+<h3 class="card_title">${kittenName2.toUpperCase()}</h3>
+<h4 class="card_race">${htmlRace}</h4>
 <p class="card_description">${kittenDescription2}</p>
 </li>`;
+
+if (kittenRace3 === "") {
+  htmlRace = '<h4 class="card_race">Uy que despiste, no sabemos su raza</h4>';
+
+} else {
+  htmlRace = kittenRace3 ;
+}
 
 const KittenThree = `<li class="card">
   <img
@@ -51,20 +80,37 @@ const KittenThree = `<li class="card">
     src="${kittenImage3}"
     alt="maine-coon-cat"
   />
-  <h3 class="card_title">${kittenName3}</h3>
-  <h4 class="card_race">${kittenRace3}</h4>
+  <h3 class="card_title">${kittenName3.toUpperCase()}</h3>
+  <h4 class="card_race">${htmlRace}</h4>
   <p class="card_description">${kittenDescription3}</p>
 </li>`;
 
+
 KittenList.innerHTML = KittenOne + KittenTwo + KittenThree;
 
-const addButton = document.querySelector('.js_addButton');
 
-const formSection = document.querySelector('.js_formSection');
+//FUNCIONES 
+ 
+  function showNewCatForm() {
+  formSection.classList.remove('collapsed');
+}
+function hideNewCatForm() {
+  formSection.classList.add('collapsed');
+}
 
-addButton.addEventListener('click',(event)=> {
-    formSection.classList.toggle('collapsed');
-})
+addButton.addEventListener('click',handleClickNewCatForm);
+
+function handleClickNewCatForm(event) {
+  event.preventDefault();
+
+  if (formSection.classList.contains('collapsed')) {
+    showNewCatForm();
+
+  } else {
+    hideNewCatForm();
+  }
+}
+
 
 const buttonAdd = document.querySelector('.js-btn-add');
 const inputDesc = document.querySelector('.js-input-desc');
